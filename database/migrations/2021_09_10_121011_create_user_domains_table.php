@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDomainsTable extends Migration
+class CreateUserDomainsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateDomainsTable extends Migration
      */
     public function up()
     {
-        Schema::create('domains', function (Blueprint $table) {
+        Schema::create('user_domains', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->timestamp('domain_verified_at')->nullable();
-            $table->string('backend_id')->nullable();
+            $table->integer('user_id');
+            $table->integer('domain_id');
+            $table->integer('company_id');
+            $table->integer('type');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateDomainsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('domains');
+        Schema::dropIfExists('user_domains');
     }
 }
