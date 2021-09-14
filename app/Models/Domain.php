@@ -17,9 +17,9 @@ class Domain extends Model
      * @var string[]
      */
     protected $fillable = [
-        'user_id',
+        'uuid',
         'name',
         'domain_verified_at',
-        'backend_id',
+        'scan_id',
     ];
 }

@@ -15,9 +15,11 @@ class CreateDomainsTable extends Migration
     {
         Schema::create('domains', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid')->index();
             $table->string('name');
             $table->timestamp('domain_verified_at')->nullable();
-            $table->string('backend_id')->nullable();
+            $table->string('scan_id')->nullable();
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
