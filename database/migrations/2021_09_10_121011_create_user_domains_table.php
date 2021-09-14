@@ -18,7 +18,7 @@ class CreateUserDomainsTable extends Migration
             $table->integer('user_id');
             $table->integer('domain_id');
             $table->integer('company_id');
-            $table->integer('type');
+            $table->integer('type')->default(1);
             $table->timestamps();
         });
     }

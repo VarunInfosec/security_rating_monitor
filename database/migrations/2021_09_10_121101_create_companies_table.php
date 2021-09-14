@@ -17,7 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->integer('employee_count');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
